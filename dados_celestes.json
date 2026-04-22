@@ -1,0 +1,367 @@
+{
+  "categorias": [
+    {"nome": "Buraco Negro Megamassivo", "cor": [0, 0, 0], "tamanho_rel": 500, "info": "(Criado pelo Gui) Monstros cósmicos no centro das galáxias maiores que os super massivos. Massas de bilhões a trilhões de sóis."},
+    {"nome": "Buraco Negro Supermassivo", "cor": [0, 0, 0], "tamanho_rel": 250, "info": "Monstros cósmicos no centro das galáxias. Massas de milhões a bilhões de sóis."},
+    {"nome": "Supernova", "cor": [255, 255, 255], "tamanho_rel": 180, "info": "Explosão colossal que encerra a vida de uma estrela massiva, brilhando mais que galáxias inteiras."},
+    {"nome": "Supergigante Vermelha", "cor": [255, 60, 60], "tamanho_rel": 160, "info": "As maiores em volume."},
+    {"nome": "Estrela de Carbono", "cor": [190, 20, 20], "tamanho_rel": 130, "info": "Gigantes frias onde o carbono supera o oxigênio na atmosfera, criando uma cor vermelha rubi profunda."},
+    {"nome": "Gigante Vermelha", "cor": [255, 120, 50], "tamanho_rel": 120, "info": "Estrelas em fase avançada de vida."},
+    {"nome": "Supergigante Azul", "cor": [173, 216, 230], "tamanho_rel": 110, "info": "Estrelas massivas e quentes."},
+    {"nome": "Tipo O", "cor": [135, 206, 250], "tamanho_rel": 85, "info": "As mais raras e quentes da sequência principal."},
+    {"nome": "Wolf-Rayet", "cor": [180, 150, 255], "tamanho_rel": 75, "info": "Estrelas ultra-quentes e massivas com ventos estelares violentos que ejetam suas camadas externas."},
+    {"nome": "Tipo B", "cor": [175, 238, 238], "tamanho_rel": 65, "info": "Azuis-esbranquiçadas, muito luminosasc."},
+    {"nome": "Buraco Negro Intermediário", "cor": [0, 0, 0], "tamanho_rel": 60, "info": "O elo perdido da evolução estelar, com massas de centenas a milhares de sóis."},
+    {"nome": "Tipo A", "cor": [255, 255, 255], "tamanho_rel": 55, "info": "Estrelas brancas (ex: Sirius)."},    
+    {"nome": "Subgigante", "cor": [255, 240, 180], "tamanho_rel": 50, "info": "Estrelas que encerraram a fusão de hidrogênio no núcleo e estão iniciando a expansão para se tornarem gigantes."},
+    {"nome": "Tipo F", "cor": [255, 255, 200], "tamanho_rel": 45, "info": "Branco-amareladas."},
+    {"nome": "Tipo G (Sol)", "cor": [255, 255, 0], "tamanho_rel": 38, "info": "Anãs amarelas estáveis."},
+    {"nome": "Tipo K", "cor": [255, 180, 50], "tamanho_rel": 30, "info": "Anãs laranjas, ótimas para vida."},
+    {"nome": "Tipo M (Anã Vermelha)", "cor": [220, 40, 40], "tamanho_rel": 22, "info": "As mais comuns do universo."},
+    {"nome": "Anã Marrom", "cor": [120, 60, 40], "tamanho_rel": 14, "info": "Estrelas fracassadas."},
+    {"nome": "Buraco Negro Estelar", "cor": [0, 0, 0], "tamanho_rel": 10, "info": "Criados pelo colapso de estrelas gigantes ao final de suas vidas."},
+    {"nome": "Anã Branca", "cor": [230, 240, 255], "tamanho_rel": 8, "info": "Restos densos do tamanho da Terra."},
+    {"nome": "Estrela de Nêutrons", "cor": [180, 200, 255], "tamanho_rel": 4, "info": "Núcleos ultra-densos."},
+    {"nome": "Gigante Gasoso", "cor": [200, 150, 100], "tamanho_rel": 2, "info": "Planetas massivos compostos principalmente de hidrogênio e hélio."},
+    {"nome": "Super-Terra", "cor": [100, 200, 150], "tamanho_rel": 0.8, "info": "Planetas rochosos significativamente maiores que a Terra, mas menores que Netuno."},
+    {"nome": "Planeta Terrestre", "cor": [135, 206, 250], "tamanho_rel": 0.5, "info": "Mundos compostos primariamente de rocha e metal, com superfícies sólidas."},
+    {"nome": "Lua/Satélite", "cor": [200, 200, 200], "tamanho_rel": 0.15, "info": "Corpos celestes que orbitam planetas ou outros corpos menores."},
+    {"nome": "Asteroide", "cor": [150, 150, 150], "tamanho_rel": 0.05, "info": "Restos rochosos do início da formação do sistema solar."}
+  ],
+  "corpos": {
+    "Supernova": [
+        {"nome": "SN 1054 (Nebulosa do Caranguejo)", "temp": "Milhões K", "cur": "Observada por astrônomos chineses em 1054. Deixou um pulsar central.", "cor_base": [120, 200, 255], "seed": 1, "planetas": []},
+        {"nome": "SN 1987A", "temp": "Expansão Fria", "cur": "A mais próxima e brilhante das últimas décadas, na Grande Nuvem de Magalhães.", "cor_base": [255, 100, 150], "seed": 2, "planetas": []},
+        {"nome": "SN 1572 (Tycho)", "temp": "Milhões K", "cur": "Ajudou Tycho Brahe a provar que o universo não era estático.", "cor_base": [255, 200, 50], "seed": 3, "planetas": []},
+        {"nome": "SN 1604 (Kepler)", "temp": "Milhões K", "cur": "Última supernova visível a olho nu na nossa própria galáxia.", "cor_base": [200, 100, 255], "seed": 4, "planetas": []},
+        {"nome": "Cassiopeia A", "temp": "30 Milhões K", "cur": "Fonte de rádio mais forte do céu além do Sol. Explodiu por volta de 1680.", "cor_base": [100, 255, 100], "seed": 5, "planetas": []},
+        {"nome": "SN 1006", "temp": "Desconhecido", "cur": "O evento estelar mais brilhante já registrado na história humana.", "cor_base": [255, 255, 200], "seed": 6, "planetas": []},
+        {"nome": "ASASSN-15lh", "temp": "Extrema", "cur": "Superluminosa, brilhante 50 vezes mais que toda a Via Láctea.", "cor_base": [255, 255, 255], "seed": 7, "planetas": []},
+        {"nome": "SN 2006gy", "temp": "Milhões K", "cur": "Uma das explosões mais energéticas já detectadas, durou meses.", "cor_base": [255, 150, 50], "seed": 8, "planetas": []},
+        {"nome": "SN 1993J", "temp": "Milhões K", "cur": "Ajudou a entender a perda de massa antes da explosão.", "cor_base": [180, 180, 255], "seed": 9, "planetas": []},
+        {"nome": "Remanescente de Vela", "temp": "Milhões K", "cur": "Restos espalhados que agora formam uma belíssima nebulosa.", "cor_base": [255, 50, 150], "seed": 10, "planetas": []}
+    ],
+    "Buraco Negro Megamassivo": [
+        {"nome": "Guilherme 1 ", "temp": "Frio (Disco Milhões K)", "cur": "O buraco negro no centro da nossa Via Láctea (4 milhões de massas solares).", "cor_disco": [255, 180, 100], "planetas": [{"n": "Estrela S2", "d": 200, "s": 0.05, "r": 6}]},
+        {"nome": "Guilherme", "temp": "Frio (Disco Milhões K)", "cur": "O primeiro a ser fotografado. Possui 6.5 bilhões de massas solares e atira um jato de plasma.", "cor_disco": [255, 120, 50], "planetas": []},
+        {"nome": "Guilherme TON 618", "temp": "Desconhecido", "cur": "Um dos maiores monstros conhecidos: 66 bilhões de massas solares.", "cor_disco": [180, 220, 255], "planetas": []},
+        {"nome": "Guilherme hoenix A*", "temp": "Desconhecido", "cur": "Candidato ao maior buraco negro já encontrado, estimado em 100 bilhões de massas solares.", "cor_disco": [200, 100, 255], "planetas": []},
+        {"nome": "Gui IC 1101 Central BH", "temp": "Desconhecido", "cur": "Ancora uma das maiores galáxias do universo conhecido.", "cor_disco": [255, 255, 200], "planetas": []},
+        {"nome": "Gui OJ 287 (Primário)", "temp": "Desconhecido", "cur": "Sistema binário de buracos negros, o primário tem 18 bilhões de massas solares.", "cor_disco": [255, 150, 100], "planetas": [{"n": "Buraco Negro Secundário", "d": 120, "s": 0.03, "r": 8}]},
+        {"nome": "Gui APM 08279+5255", "temp": "Desconhecido", "cur": "Cercado por uma quantidade massiva de vapor de água cósmico.", "cor_disco": [150, 200, 255], "planetas": []},
+        {"nome": "Gui NGC 1068 (Cetus A)", "temp": "Desconhecido", "cur": "Núcleo Galáctico Ativo oculto por um anel espesso de poeira.", "cor_disco": [255, 100, 80], "planetas": []},
+        {"nome": "Gui Galáxia do Sombrero BH", "temp": "Desconhecido", "cur": "Tem surpreendentes 1 bilhão de massas solares, gigante para o tamanho da galáxia.", "cor_disco": [255, 200, 150], "planetas": []},
+        {"nome": "Gui M31* (Andrômeda)", "temp": "Desconhecido", "cur": "No centro da nossa vizinha Andrômeda, com cerca de 100 milhões de massas solares.", "cor_disco": [200, 200, 255], "planetas": []}
+    ],
+    "Buraco Negro Supermassivo": [
+        {"nome": "Sagittarius A*", "temp": "Frio (Disco Milhões K)", "cur": "O buraco negro no centro da nossa Via Láctea (4 milhões de massas solares).", "cor_disco": [255, 180, 100], "planetas": [{"n": "Estrela S2", "d": 200, "s": 0.05, "r": 6}]},
+        {"nome": "M87*", "temp": "Frio (Disco Milhões K)", "cur": "O primeiro a ser fotografado. Possui 6.5 bilhões de massas solares e atira um jato de plasma.", "cor_disco": [255, 120, 50], "planetas": []},
+        {"nome": "TON 618", "temp": "Desconhecido", "cur": "Um dos maiores monstros conhecidos: 66 bilhões de massas solares.", "cor_disco": [180, 220, 255], "planetas": []},
+        {"nome": "Phoenix A*", "temp": "Desconhecido", "cur": "Candidato ao maior buraco negro já encontrado, estimado em 100 bilhões de massas solares.", "cor_disco": [200, 100, 255], "planetas": []},
+        {"nome": "IC 1101 Central BH", "temp": "Desconhecido", "cur": "Ancora uma das maiores galáxias do universo conhecido.", "cor_disco": [255, 255, 200], "planetas": []},
+        {"nome": "OJ 287 (Primário)", "temp": "Desconhecido", "cur": "Sistema binário de buracos negros, o primário tem 18 bilhões de massas solares.", "cor_disco": [255, 150, 100], "planetas": [{"n": "Buraco Negro Secundário", "d": 120, "s": 0.03, "r": 8}]},
+        {"nome": "APM 08279+5255", "temp": "Desconhecido", "cur": "Cercado por uma quantidade massiva de vapor de água cósmico.", "cor_disco": [150, 200, 255], "planetas": []},
+        {"nome": "NGC 1068 (Cetus A)", "temp": "Desconhecido", "cur": "Núcleo Galáctico Ativo oculto por um anel espesso de poeira.", "cor_disco": [255, 100, 80], "planetas": []},
+        {"nome": "Galáxia do Sombrero BH", "temp": "Desconhecido", "cur": "Tem surpreendentes 1 bilhão de massas solares, gigante para o tamanho da galáxia.", "cor_disco": [255, 200, 150], "planetas": []},
+        {"nome": "M31* (Andrômeda)", "temp": "Desconhecido", "cur": "No centro da nossa vizinha Andrômeda, com cerca de 100 milhões de massas solares.", "cor_disco": [200, 200, 255], "planetas": []}
+    ],
+    "Buraco Negro Intermediário": [
+        {"nome": "HLX-1", "temp": "Disco Quente", "cur": "A fonte de raios-X ultraluminosa mais forte conhecida, forte candidato a intermediário.", "cor_disco": [150, 255, 255], "planetas": []},
+        {"nome": "NGC 2276-3c", "temp": "Disco Quente", "cur": "Emite fortes jatos de rádio que suprimem a formação estelar ao redor.", "cor_disco": [255, 150, 150], "planetas": []},
+        {"nome": "GCIRS 13E", "temp": "Desconhecido", "cur": "Um possível buraco negro intermediário orbitando muito perto do Sagittarius A*.", "cor_disco": [200, 200, 200], "planetas": []},
+        {"nome": "M82 X-1", "temp": "Disco Quente", "cur": "Buraco negro de 400 massas solares pulsando na galáxia do Charuto.", "cor_disco": [255, 200, 100], "planetas": []},
+        {"nome": "GW190521 (Fusão)", "temp": "N/A", "cur": "Nascido da colisão detectada por ondas gravitacionais entre dois buracos negros estelares.", "cor_disco": [100, 150, 255], "planetas": []},
+        {"nome": "47 Tucanae Center", "temp": "Desconhecido", "cur": "Suspeita-se que este aglomerado globular esconda um buraco negro de ~2.200 massas solares.", "cor_disco": [255, 255, 150], "planetas": []},
+        {"nome": "Omega Centauri Core", "temp": "Desconhecido", "cur": "Pode abrigar um intermediário que restou após sua galáxia anã original ser devorada pela Via Láctea.", "cor_disco": [255, 180, 120], "planetas": []},
+        {"nome": "M15 Center", "temp": "Desconhecido", "cur": "O centro denso deste aglomerado globular indica a provável presença de um IMBH.", "cor_disco": [200, 255, 200], "planetas": []},
+        {"nome": "NGC 1313 X-1", "temp": "Disco Quente", "cur": "Fonte ultraluminosa irregular.", "cor_disco": [255, 100, 200], "planetas": []},
+        {"nome": "CO-0.40-0.22", "temp": "N/A", "cur": "Nuvem de gás compacta perto do centro galáctico movendo-se sob atração invisível.", "cor_disco": [180, 180, 180], "planetas": []}
+    ],
+    "Buraco Negro Estelar": [
+        {"nome": "Cygnus X-1", "temp": "Disco Fervente", "cur": "O primeiro buraco negro aceito pela ciência. Rouba matéria de uma supergigante azul.", "cor_disco": [180, 200, 255], "planetas": [{"n": "HDE 226868 (Estrela)", "d": 120, "s": 0.04, "r": 15}]},
+        {"nome": "V404 Cygni", "temp": "Disco Variável", "cur": "Um microquasar conhecido por suas erupções massivas e imprevisíveis.", "cor_disco": [255, 150, 50], "planetas": [{"n": "Estrela Companheira (Tipo K)", "d": 90, "s": 0.06, "r": 5}]},
+        {"nome": "GRO J1655-40", "temp": "Disco Quente", "cur": "Um dos buracos negros girando mais rápido, disparando jatos quase à velocidade da luz.", "cor_disco": [255, 255, 200], "planetas": [{"n": "Estrela Tipo F", "d": 100, "s": 0.05, "r": 6}]},
+        {"nome": "A0620-00", "temp": "Desconhecido", "cur": "Um dos buracos negros mais próximos da Terra (cerca de 3.300 anos-luz).", "cor_disco": [200, 150, 100], "planetas": [{"n": "Anã Laranja", "d": 70, "s": 0.07, "r": 4}]},
+        {"nome": "XTE J1118+480", "temp": "Disco Frio", "cur": "Localizado fora do plano galáctico principal, possivelmente empurrado por uma explosão.", "cor_disco": [100, 150, 255], "planetas": [{"n": "Anã Vermelha", "d": 50, "s": 0.1, "r": 3}]},
+        {"nome": "GRS 1915+105", "temp": "Disco Quente", "cur": "O buraco negro estelar mais pesado da Via Láctea, com cerca de 14 massas solares.", "cor_disco": [255, 200, 50], "planetas": [{"n": "Gigante Vermelha", "d": 180, "s": 0.02, "r": 10}]},
+        {"nome": "LMC X-1", "temp": "Disco Quente", "cur": "Localizado na Grande Nuvem de Magalhães, orbita uma estrela massiva do tipo O.", "cor_disco": [220, 240, 255], "planetas": [{"n": "Estrela Tipo O", "d": 150, "s": 0.03, "r": 14}]},
+        {"nome": "LMC X-3", "temp": "Disco Quente", "cur": "Outro forte emissor de raios-X na LMC, orbita uma gigante tipo B.", "cor_disco": [180, 220, 255], "planetas": [{"n": "Estrela Tipo B", "d": 110, "s": 0.04, "r": 10}]},
+        {"nome": "SS 433", "temp": "Disco Muito Quente", "cur": "Seus jatos estão espiralando e perfurando uma nebulosa (Manatee Nebula).", "cor_disco": [255, 50, 50], "planetas": [{"n": "Estrela Tipo A", "d": 80, "s": 0.08, "r": 8}]},
+        {"nome": "M33 X-7", "temp": "Disco Quente", "cur": "Primeiro buraco negro estelar descoberto em uma galáxia além da nossa vizinhança imediata.", "cor_disco": [200, 200, 255], "planetas": [{"n": "Supergigante O", "d": 200, "s": 0.015, "r": 18}]}
+    ],
+    "Wolf-Rayet": [
+        {"nome": "WR 102", "temp": "210.000K", "cur": "Uma das estrelas mais quentes conhecidas.", "planetas": []},
+        {"nome": "WR 124", "temp": "35.000K", "cur": "Cercada pela nebulosa M1-67.", "planetas": []},
+        {"nome": "Gamma Velorum A", "temp": "35.000K", "cur": "Conhecida como a 'Regor', é a Wolf-Rayet mais próxima.", "planetas": []},
+        {"nome": "Theta Muscae", "temp": "40.000K", "cur": "Sistema múltiplo com uma componente Wolf-Rayet.", "planetas": []},
+        {"nome": "WR 2", "temp": "141.000K", "cur": "Estrela de altíssima velocidade de vento estelar.", "planetas": []},
+        {"nome": "WR 142", "temp": "200.000K", "cur": "Estrela massiva no estágio final de oxigênio.", "planetas": []},
+        {"nome": "WR 7", "temp": "100.000K", "cur": "Ilumina a nebulosa de bolha NGC 2359.", "planetas": []},
+        {"nome": "WR 134", "temp": "63.000K", "cur": "Estrela variável com ventos em forma de concha.", "planetas": []},
+        {"nome": "WR 135", "temp": "63.000K", "cur": "Rica em carbono, estágio WC8.", "planetas": []},
+        {"nome": "WR 137", "temp": "50.000K", "cur": "Binária que produz poeira em colisões de vento.", "planetas": []}
+    ],
+    "Estrela de Carbono": [
+        {"nome": "La Superba", "temp": "2.400K", "cur": "Uma das estrelas mais vermelhas e ricas em carbono.", "planetas": []},
+        {"nome": "Hind's Crimson Star", "temp": "2.100K", "cur": "Variável de cor rubi intensa em Lepus.", "planetas": []},
+        {"nome": "V Hydrae", "temp": "2.500K", "cur": "Estrela expelindo 'balas' de plasma em alta velocidade.", "planetas": []},
+        {"nome": "TX Piscium", "temp": "3.000K", "cur": "Gigante de carbono visível a olho nu sob céus escuros.", "planetas": []},
+        {"nome": "UU Aurigae", "temp": "2.800K", "cur": "Uma das gigantes de carbono mais brilhantes do norte.", "planetas": []},
+        {"nome": "CW Leonis", "temp": "2.200K", "cur": "Objeto mais brilhante no céu no comprimento de onda infravermelho.", "planetas": []},
+        {"nome": "W Orionis", "temp": "2.600K", "cur": "Estrela variável de carbono na constelação de Órion.", "planetas": []},
+        {"nome": "S Cephei", "temp": "2.300K", "cur": "Cor avermelhada profunda e marcante.", "planetas": []},
+        {"nome": "V460 Cygni", "temp": "2.900K", "cur": "Estrela fria com atmosfera rica em moléculas de carbono.", "planetas": []},
+        {"nome": "DY Persei", "temp": "2.500K", "cur": "Protótipo de uma classe rara de variáveis de carbono.", "planetas": []}
+    ],
+    "Subgigante": [
+        {"nome": "Mu Herculis A", "temp": "5.500K", "cur": "Estrela que começou a expandir após sair da sequência principal.", "planetas": []},
+        {"nome": "Muphrid", "temp": "6.100K", "cur": "Companheira de Arcturus, rica em metais.", "planetas": []},
+        {"nome": "Delta Pavonis", "temp": "5.600K", "cur": "Análoga ao Sol, mas muito mais evoluída.", "planetas": []},
+        {"nome": "Gamma Cephei A", "temp": "4.800K", "cur": "Estrela binária com um planeta confirmado.", "planetas": [{"n": "Gamma Cephei A b (Tadmor)", "d": 90, "s": 0.02, "r": 7}]},
+        {"nome": "Beta Hydri", "temp": "5.800K", "cur": "A subgigante mais próxima do polo sul celeste.", "planetas": []},
+        {"nome": "HD 140283", "temp": "5.700K", "cur": "Conhecida como 'Estrela de Matusalém', uma das mais antigas.", "planetas": []},
+        {"nome": "Chi Leonis", "temp": "7.500K", "cur": "Subgigante branca na constelação de Leão.", "planetas": []},
+        {"nome": "Kappa Geminorum", "temp": "4.900K", "cur": "Gigante amarela em estágio inicial de expansão.", "planetas": []},
+        {"nome": "Procyon A", "temp": "6.500K", "cur": "Estrela subgigante branca-amarela próxima.", "planetas": []},
+        {"nome": "70 Virginis", "temp": "5.400K", "cur": "Hospeda um dos primeiros exoplanetas descobertos.", "planetas": [{"n": "70 Virginis b", "d": 75, "s": 0.03, "r": 8}]}
+    ],
+    "Supergigante Azul": [
+        {"nome": "Rigel", "temp": "12.100K", "cur": "A estrela mais brilhante de Órion.", "planetas": []},
+        {"nome": "Deneb", "temp": "8.500K", "cur": "Vértice do Triângulo de Verão.", "planetas": []},
+        {"nome": "Zeta Puppis", "temp": "40.000K", "cur": "Extremamente massiva.", "planetas": []},
+        {"nome": "Alnilam", "temp": "27.000K", "cur": "Centro do Cinturão de Órion.", "planetas": []},
+        {"nome": "Alnitak", "temp": "29.500K", "cur": "Sistema triplo azul.", "planetas": []},
+        {"nome": "Saiph", "temp": "26.500K", "cur": "Pé direito de Órion.", "planetas": []},
+        {"nome": "Bellatrix", "temp": "22.000K", "cur": "Estrela Amazona.", "planetas": []},
+        {"nome": "Kappa Orionis", "temp": "26.000K", "cur": "Localizada em Órion.", "planetas": []},
+        {"nome": "Tau Canis Majoris", "temp": "32.000K", "cur": "Múltipla brilhante.", "planetas": []},
+        {"nome": "10 Lacertae", "temp": "35.000K", "cur": "Padrão espectral O9.", "planetas": []}
+    ],
+    "Tipo O": [
+        {"nome": "Mintaka", "temp": "29.500K", "cur": "Cinturão de Órion.", "planetas": []},
+        {"nome": "Naos", "temp": "42.000K", "cur": "Significa 'Navio'.", "planetas": []},
+        {"nome": "Sigma Orionis", "temp": "32.000K", "cur": "Sistema quíntuplo.", "planetas": []},
+        {"nome": "Lambda Orionis", "temp": "35.000K", "cur": "Cabeça de Órion.", "planetas": []},
+        {"nome": "AE Aurigae", "temp": "33.000K", "cur": "Estrela fugitiva.", "planetas": []},
+        {"nome": "Xi Persei", "temp": "37.000K", "cur": "Nebulosa da Califórnia.", "planetas": []},
+        {"nome": "Theta1 Orionis C", "temp": "39.000K", "cur": "Massiva do Trapézio.", "planetas": []},
+        {"nome": "HD 93129A", "temp": "44.000K", "cur": "Altamente luminosa.", "planetas": []},
+        {"nome": "S Monocerotis", "temp": "37.500K", "cur": "Variável jovem.", "planetas": []},
+        {"nome": "HD 47129", "temp": "35.000K", "cur": "Estrela de Plaskett.", "planetas": []}
+    ],
+    "Tipo B": [
+        {"nome": "Achernar", "temp": "15.000K", "cur": "Extremamente achatada.", "planetas": []},
+        {"nome": "Regulus", "temp": "12.400K", "cur": "Coração do Leão.", "planetas": []},
+        {"nome": "Spica", "temp": "22.400K", "cur": "Binária em Virgem.", "planetas": []},
+        {"nome": "Algol", "temp": "13.000K", "cur": "Estrela do Demônio.", "planetas": []},
+        {"nome": "Shaula", "temp": "25.000K", "cur": "Ferrão do Escorpião.", "planetas": []},
+        {"nome": "Hadar", "temp": "25.000K", "cur": "Brilhante do Centauro.", "planetas": []},
+        {"nome": "Elnath", "temp": "13.600K", "cur": "Chifre do Touro.", "planetas": []},
+        {"nome": "Miaplacidus", "temp": "8.800K", "cur": "Estrela da Carena.", "planetas": []},
+        {"nome": "Alpheratz", "temp": "13.800K", "cur": "Pégaso e Andrômeda.", "planetas": []},
+        {"nome": "Adhara", "temp": "22.200K", "cur": "Forte em UV.", "planetas": []}
+    ],
+    "Tipo A": [
+        {"nome": "Sirius A", "temp": "9.940K", "cur": "A mais brilhante do céu.", "planetas": []},
+        {"nome": "Vega", "temp": "9.600K", "cur": "Padrão de magnitude.", "planetas": []},
+        {"nome": "Altair", "temp": "7.700K", "cur": "Rotação ultra-rápida.", "planetas": []},
+        {"nome": "Fomalhaut", "temp": "8.500K", "cur": "Possui um grande disco de poeira.", "planetas": [{"n": "Fomalhaut b (Dagon)", "d": 110, "s": 0.01, "r": 7}]},
+        {"nome": "Castor", "temp": "9.300K", "cur": "Sistema sêxtuplo.", "planetas": []},
+        {"nome": "Alioth", "temp": "9.000K", "cur": "Brilhante da Ursa Maior.", "planetas": []},
+        {"nome": "Mizar", "temp": "9.000K", "cur": "Binária com Alcor.", "planetas": []},
+        {"nome": "Merak", "temp": "9.300K", "cur": "Aponta para a Polar.", "planetas": []},
+        {"nome": "Rasalhague", "temp": "8.000K", "cur": "Brilhante do Serpentário.", "planetas": []},
+        {"nome": "Menkalinan", "temp": "9.200K", "cur": "Binária eclipsante.", "planetas": []}
+    ],
+    "Supergigante Vermelha": [
+        {"nome": "Betelgeuse", "temp": "3.500K", "cur": "Futura supernova.", "planetas": []},
+        {"nome": "Antares", "temp": "3.400K", "cur": "Rival de Marte.", "planetas": []},
+        {"nome": "VY Canis Majoris", "temp": "3.500K", "cur": "Hipergigante massiva.", "planetas": []},
+        {"nome": "Mu Cephei", "temp": "3.700K", "cur": "Estrela Granada.", "planetas": []},
+        {"nome": "UY Scuti", "temp": "3.300K", "cur": "Uma das maiores conhecidas.", "planetas": []},
+        {"nome": "VV Cephei A", "temp": "3.600K", "cur": "Binária hipergigante.", "planetas": []},
+        {"nome": "Enif", "temp": "4.300K", "cur": "Brilhante de Pégaso.", "planetas": []},
+        {"nome": "Rasalgethi", "temp": "3.300K", "cur": "Sistema múltiplo.", "planetas": []},
+        {"nome": "Gacrux", "temp": "3.600K", "cur": "Topo da Cruz do Sul.", "planetas": []},
+        {"nome": "KY Cygni", "temp": "3.500K", "cur": "Altamente luminosa.", "planetas": []}
+    ],
+    "Gigante Vermelha": [
+        {"nome": "Arcturus", "temp": "4.300K", "cur": "Brilhante do Norte.", "planetas": []},
+        {"nome": "Aldebaran", "temp": "3.900K", "cur": "Olho do Touro.", "planetas": [{"n": "Aldebaran b", "d": 120, "s": 0.015, "r": 9}]},
+        {"nome": "Pollux", "temp": "4.600K", "cur": "Gigante mais próxima.", "planetas": [{"n": "Pollux b (Thestias)", "d": 100, "s": 0.02, "r": 8}]},
+        {"nome": "Kochab", "temp": "4.000K", "cur": "Estrela da Ursa Menor.", "planetas": []},
+        {"nome": "Hamal", "temp": "4.400K", "cur": "Brilhante de Áries.", "planetas": []},
+        {"nome": "Menkar", "temp": "3.800K", "cur": "Mandíbula da Baleia.", "planetas": []},
+        {"nome": "Dubhe", "temp": "4.600K", "cur": "Apontadora da Ursa Maior.", "planetas": []},
+        {"nome": "Alphard", "temp": "4.100K", "cur": "A Solitária da Hidra.", "planetas": []},
+        {"nome": "Mira", "temp": "3.000K", "cur": "Estrela com cauda.", "planetas": []},
+        {"nome": "Gienah", "temp": "4.700K", "cur": "Brilhante do Corvo.", "planetas": []}
+    ],
+    "Tipo F": [
+        {"nome": "Canopus", "temp": "7.300K", "cur": "Segunda mais brilhante.", "planetas": []},
+        {"nome": "Procyon A", "temp": "6.500K", "cur": "Vizinha próxima.", "planetas": []},
+        {"nome": "Polaris", "temp": "6.000K", "cur": "Estrela do Norte.", "planetas": []},
+        {"nome": "Wezen", "temp": "6.400K", "cur": "Supergigante em Cão Maior.", "planetas": []},
+        {"nome": "Sadr", "temp": "6.100K", "cur": "Centro do Cisne.", "planetas": []},
+        {"nome": "Arneb", "temp": "6.800K", "cur": "Brilhante da Lebre.", "planetas": []},
+        {"nome": "Mirfak", "temp": "6.300K", "cur": "Brilhante de Perseu.", "planetas": []},
+        {"nome": "Furud", "temp": "7.000K", "cur": "Branco-amarela.", "planetas": []},
+        {"nome": "Sigma Boötis", "temp": "6.700K", "cur": "Alta metalicidade.", "planetas": []},
+        {"nome": "Alshain", "temp": "6.300K", "cur": "Estrela da Águia.", "planetas": []}
+    ],
+    "Tipo G (Sol)": [
+        {"nome": "Sol", "temp": "5.778K", "cur": "Nossa estrela.", "planetas": [
+            {"n": "Mercúrio", "d": 50, "s": 0.045, "r": 3}, {"n": "Vênus", "d": 70, "s": 0.035, "r": 5},
+            {"n": "Terra", "d": 95, "s": 0.025, "r": 5}, {"n": "Marte", "d": 125, "s": 0.02, "r": 4},
+            {"n": "Júpiter", "d": 180, "s": 0.009, "r": 11}, {"n": "Saturno", "d": 240, "s": 0.007, "r": 10}
+        ]},
+        {"nome": "Alpha Centauri A", "temp": "5.790K", "cur": "Gêmea solar vizinha.", "planetas": []},
+        {"nome": "Tau Ceti", "temp": "5.340K", "cur": "Solitária estável.", "planetas": [{"n": "Tau Ceti e", "d": 80, "s": 0.03, "r": 5}, {"n": "Tau Ceti f", "d": 130, "s": 0.015, "r": 6}]},
+        {"nome": "51 Pegasi", "temp": "5.790K", "cur": "Primeiro exoplaneta em Tipo G.", "planetas": [{"n": "51 Pegasi b (Dimidium)", "d": 55, "s": 0.05, "r": 9}]},
+        {"nome": "Kepler-452", "temp": "5.750K", "cur": "Primo da Terra.", "planetas": [{"n": "Kepler-452 b", "d": 100, "s": 0.025, "r": 5}]},
+        {"nome": "18 Scorpii", "temp": "5.800K", "cur": "Gêmea solar perfeita.", "planetas": []},
+        {"nome": "Mu Arae", "temp": "5.820K", "cur": "Possui quatro planetas.", "planetas": [{"n": "Mu Arae b", "d": 90, "s": 0.025, "r": 7}, {"n": "Mu Arae c", "d": 60, "s": 0.04, "r": 5}]},
+        {"nome": "HD 10180", "temp": "5.910K", "cur": "Sistema complexo.", "planetas": [{"n": "HD 10180 c", "d": 75, "s": 0.035, "r": 6}, {"n": "HD 10180 g", "d": 140, "s": 0.015, "r": 8}]},
+        {"nome": "Kepler-22", "temp": "5.520K", "cur": "Habitável?", "planetas": [{"n": "Kepler-22 b", "d": 110, "s": 0.02, "r": 6}]},
+        {"nome": "61 Virginis", "temp": "5.530K", "cur": "Baixa massa.", "planetas": [{"n": "61 Virginis b", "d": 50, "s": 0.045, "r": 4}]}
+    ],
+    "Tipo K": [
+        {"nome": "Alpha Centauri B", "temp": "5.260K", "cur": "Companheira da A.", "planetas": []},
+        {"nome": "Epsilon Eridani", "temp": "5.080K", "cur": "Estrela jovem.", "planetas": [{"n": "Epsilon Eridani b (AEgir)", "d": 140, "s": 0.01, "r": 9}]},
+        {"nome": "Kepler-442", "temp": "4.400K", "cur": "Muito habitável.", "planetas": [{"n": "Kepler-442 b", "d": 95, "s": 0.025, "r": 5}]},
+        {"nome": "Sigma Draconis", "temp": "5.300K", "cur": "Vizinha estável.", "planetas": []},
+        {"nome": "Kepler-62", "temp": "4.900K", "cur": "Mundos oceânicos.", "planetas": [{"n": "Kepler-62 e", "d": 85, "s": 0.03, "r": 5}, {"n": "Kepler-62 f", "d": 120, "s": 0.02, "r": 4}]},
+        {"nome": "70 Ophiuchi", "temp": "5.200K", "cur": "Binária próxima.", "planetas": []},
+        {"nome": "Kepler-10", "temp": "5.600K", "cur": "Primeiro rochoso.", "planetas": [{"n": "Kepler-10 b", "d": 45, "s": 0.05, "r": 4}]},
+        {"nome": "61 Cygni A", "temp": "4.500K", "cur": "Medição de distância pioneira.", "planetas": []},
+        {"nome": "Gliese 12", "temp": "3.900K", "cur": "Planeta tipo Terra.", "planetas": [{"n": "Gliese 12 b", "d": 65, "s": 0.035, "r": 5}]},
+        {"nome": "HD 219134", "temp": "4.700K", "cur": "Super-terras próximas.", "planetas": [{"n": "HD 219134 b", "d": 50, "s": 0.045, "r": 6}]}
+    ],
+    "Tipo M (Anã Vermelha)": [
+        {"nome": "Proxima Centauri", "temp": "3.040K", "cur": "A mais próxima.", "planetas": [{"n": "Proxima Centauri b", "d": 60, "s": 0.04, "r": 4}, {"n": "Proxima Centauri c", "d": 140, "s": 0.01, "r": 7}]},
+        {"nome": "TRAPPIST-1", "temp": "2.550K", "cur": "7 planetas terrestres.", "planetas": [
+            {"n": "TRAPPIST-1 b", "d": 40, "s": 0.065, "r": 4}, {"n": "TRAPPIST-1 c", "d": 55, "s": 0.055, "r": 4},
+            {"n": "TRAPPIST-1 d", "d": 70, "s": 0.045, "r": 3}, {"n": "TRAPPIST-1 e", "d": 85, "s": 0.035, "r": 4}
+        ]},
+        {"nome": "Barnard's Star", "temp": "3.100K", "cur": "Movimento rápido.", "planetas": [{"n": "Barnard's Star b", "d": 90, "s": 0.02, "r": 5}]},
+        {"nome": "Gliese 581", "temp": "3.500K", "cur": "Sistema rochoso famoso.", "planetas": [{"n": "Gliese 581 c", "d": 60, "s": 0.04, "r": 5}, {"n": "Gliese 581 e", "d": 45, "s": 0.055, "r": 4}]},
+        {"nome": "Kepler-186", "temp": "3.700K", "cur": "Primeiro habitável terrestre.", "planetas": [{"n": "Kepler-186 f", "d": 110, "s": 0.02, "r": 5}]},
+        {"nome": "Ross 128", "temp": "3.200K", "cur": "Planeta temperado.", "planetas": [{"n": "Ross 128 b", "d": 65, "s": 0.035, "r": 4}]},
+        {"nome": "Teegarden's Star", "temp": "2.600K", "cur": "Muito leve.", "planetas": [{"n": "Teegarden's Star b", "d": 50, "s": 0.045, "r": 4}, {"n": "Teegarden's Star c", "d": 80, "s": 0.03, "r": 4}]},
+        {"nome": "LHS 1140", "temp": "3.100K", "cur": "Super-terra massiva.", "planetas": [{"n": "LHS 1140 b", "d": 85, "s": 0.025, "r": 6}]},
+        {"nome": "Wolf 359", "temp": "2.800K", "cur": "Ícone da Ficção Científica.", "planetas": []},
+        {"nome": "Lalande 21185", "temp": "3.400K", "cur": "Vizinha próxima.", "planetas": [{"n": "Lalande 21185 b", "d": 75, "s": 0.03, "r": 5}]}
+    ],
+    "Anã Marrom": [
+        {"nome": "Luhman 16", "temp": "1.200K", "cur": "Sistema marrom próximo.", "planetas": []},
+        {"nome": "WISE 1049", "temp": "1.100K", "cur": "Luhman 16.", "planetas": []},
+        {"nome": "Gliese 229B", "temp": "950K", "cur": "Primeira confirmada.", "planetas": []},
+        {"nome": "Teide 1", "temp": "2.600K", "cur": "Descoberta nas Plêiades.", "planetas": []},
+        {"nome": "2MASS J0523", "temp": "2.000K", "cur": "No limite estelar.", "planetas": []},
+        {"nome": "OTS 44", "temp": "1.700K", "cur": "Anã isolada.", "planetas": []},
+        {"nome": "SCR 1845-6357B", "temp": "900K", "cur": "Companheira próxima.", "planetas": []},
+        {"nome": "HD 3651B", "temp": "800K", "cur": "Anã fria.", "planetas": []},
+        {"nome": "Cha 110913", "temp": "1.300K", "cur": "Possui disco de detritos.", "planetas": []},
+        {"nome": "WISE 0855", "temp": "250K", "cur": "Objeto mais frio fora do Sol.", "planetas": []}
+    ],
+    "Anã Branca": [
+        {"nome": "Sirius B", "temp": "25.200K", "cur": "O Filhote.", "planetas": []},
+        {"nome": "Procyon B", "temp": "7.700K", "cur": "Companheira densa.", "planetas": []},
+        {"nome": "Van Maanen 2", "temp": "6.200K", "cur": "Solitária próxima.", "planetas": []},
+        {"nome": "WD 1856+534", "temp": "4.700K", "cur": "Planeta sobrevivente.", "planetas": [{"n": "WD 1856+534 b", "d": 60, "s": 0.04, "r": 9}]},
+        {"nome": "WD 1145+017", "temp": "15.000K", "cur": "Canibalizando planetas.", "planetas": [{"n": "WD 1145+017 Fragments", "d": 40, "s": 0.07, "r": 2}]},
+        {"nome": "40 Eridani B", "temp": "16.500K", "cur": "Primeira descoberta.", "planetas": []},
+        {"nome": "Stein 2051 B", "temp": "7.100K", "cur": "Medida por lente gravitacional.", "planetas": []},
+        {"nome": "LP 145-141", "temp": "8.500K", "cur": "Vizinha próxima.", "planetas": []},
+        {"nome": "G 29-38", "temp": "11.800K", "cur": "Variável pulsante.", "planetas": []},
+        {"nome": "WD 0145+234", "temp": "13.000K", "cur": "Destruindo asteroide.", "planetas": []}
+    ],
+    "Estrela de Nêutrons": [
+        {"nome": "Lich (PSR B1257+12)", "temp": "30.000K", "cur": "Primeiros exoplanetas.", "planetas": [
+            {"n": "Lich Draugr", "d": 45, "s": 0.06, "r": 3}, {"n": "Lich Poltergeist", "d": 80, "s": 0.035, "r": 6}, {"n": "Lich Phobetor", "d": 110, "s": 0.02, "r": 6}
+        ]},
+        {"nome": "Crab Pulsar", "temp": "1.600.000K", "cur": "Centro da Nebulosa Crab.", "planetas": []},
+        {"nome": "Vela Pulsar", "temp": "700.000K", "cur": "Brilhante em Raios-Gama.", "planetas": []},
+        {"nome": "Geminga", "temp": "500.000K", "cur": "Fonte intensa de Raios-Gama.", "planetas": []},
+        {"nome": "RX J1856.5-3754", "temp": "430.000K", "cur": "Sete Magníficas.", "planetas": []},
+        {"nome": "PSR J0437-4715", "temp": "100.000K", "cur": "Pulsar milissegundo.", "planetas": []},
+        {"nome": "PSR B1919+21", "temp": "N/A", "cur": "Primeiro pulsar (LGM-1).", "planetas": []},
+        {"nome": "PSR J1748-2446ad", "temp": "N/A", "cur": "Rotação recorde (716 Hz).", "planetas": []},
+        {"nome": "Calvera", "temp": "750.000K", "cur": "Nêutron isolada.", "planetas": []},
+        {"nome": "Hulse-Taylor Pulsar", "temp": "N/A", "cur": "Provou ondas gravitacionais.", "planetas": []}
+    ],
+    "Gigante Gasoso": [
+        {"nome": "Júpiter", "temp": "110 K", "cur": "O maior do Sistema Solar. Possui a Grande Mancha Vermelha.", "planetas": [
+            {"n": "Io", "d": 40, "s": 0.06, "r": 4}, {"n": "Europa", "d": 60, "s": 0.05, "r": 4}, 
+            {"n": "Ganimedes", "d": 85, "s": 0.04, "r": 5}, {"n": "Calisto", "d": 110, "s": 0.03, "r": 5}
+        ]},
+        {"nome": "Saturno", "temp": "88 K", "cur": "Famoso por seus anéis espetaculares de gelo e rocha.", "planetas": [
+            {"n": "Titã", "d": 70, "s": 0.04, "r": 5}, {"n": "Encélado", "d": 45, "s": 0.07, "r": 3},
+            {"n": "Mimas", "d": 30, "s": 0.09, "r": 2}, {"n": "Reia", "d": 95, "s": 0.03, "r": 4}
+        ]},
+        {"nome": "Urano", "temp": "49 K", "cur": "Gira de lado em relação ao seu plano orbital.", "planetas": [
+            {"n": "Titânia", "d": 60, "s": 0.05, "r": 4}, {"n": "Oberon", "d": 80, "s": 0.04, "r": 4}
+        ]},
+        {"nome": "Netuno", "temp": "48 K", "cur": "O planeta mais ventoso, com ventos de até 2.100 km/h.", "planetas": [
+            {"n": "Tritão", "d": 50, "s": 0.06, "r": 4}
+        ]},
+        {"nome": "HD 209458 b (Osiris)", "temp": "1.130 K", "cur": "Primeiro planeta observado em trânsito; está perdendo sua atmosfera.", "planetas": []},
+        {"nome": "TrES-2b", "temp": "1.200 K", "cur": "O planeta mais escuro conhecido, reflete menos de 1% da luz.", "planetas": []},
+        {"nome": "51 Pegasi b", "temp": "1.200 K", "cur": "O primeiro Júpiter Quente descoberto orbitando uma estrela solar.", "planetas": []},
+        {"nome": "WASP-12b", "temp": "2.500 K", "cur": "Sendo esticado e devorado por sua estrela hospedeira.", "planetas": []},
+        {"nome": "Kepler-7b", "temp": "1.100 K", "cur": "Conhecido por suas nuvens de silicatos (areia líquida).", "planetas": []},
+        {"nome": "WASP-17b", "temp": "1.100 K", "cur": "Órbita em direção retrógrada (oposta à rotação da estrela).", "planetas": []}
+    ],
+    "Super-Terra": [
+        {"nome": "Gliese 581 c", "temp": "313 K", "cur": "Localizado na borda da zona habitável de sua estrela.", "planetas": []},
+        {"nome": "55 Cancri e", "temp": "2.670 K", "cur": "Mundo infernal que pode ser composto em grande parte por diamante.", "planetas": []},
+        {"nome": "Kepler-10b", "temp": "1.800 K", "cur": "Mundo de lava sólida e ferro, o primeiro planeta rochoso da Kepler.", "planetas": []},
+        {"nome": "Kepler-22b", "temp": "295 K", "cur": "Mundo oceânico potencial na zona habitável de um sol.", "planetas": []},
+        {"nome": "Kepler-452b", "temp": "265 K", "cur": "Considerado o 'primo mais velho' da Terra.", "planetas": []},
+        {"nome": "HD 40307 g", "temp": "280 K", "cur": "Candidato a planeta habitável em um sistema de seis planetas.", "planetas": []},
+        {"nome": "LHS 1140 b", "temp": "230 K", "cur": "Super-Terra densa e rochosa que pode reter uma atmosfera.", "planetas": []},
+        {"nome": "K2-18b", "temp": "250 K", "cur": "Vapor de água foi detectado em sua atmosfera rica em hidrogênio.", "planetas": []},
+        {"nome": "Kepler-62f", "temp": "200 K", "cur": "Planeta rochoso que orbita uma anã laranja estável.", "planetas": []},
+        {"nome": "Gliese 1214 b", "temp": "500 K", "cur": "Provavelmente um 'mundo de água' com atmosfera espessa de vapor.", "planetas": []}
+    ],
+    "Planeta Terrestre": [
+        {"nome": "Terra", "temp": "288 K", "cur": "O único mundo conhecido a abrigar vida e água líquida superficial.", "planetas": [
+            {"n": "Lua", "d": 40, "s": 0.05, "r": 3}
+        ]},
+        {"nome": "Vênus", "temp": "737 K", "cur": "O planeta mais quente devido ao efeito estufa descontrolado.", "planetas": []},
+        {"nome": "Marte", "temp": "210 K", "cur": "O Planeta Vermelho, lar do maior vulcão do sistema solar.", "planetas": [
+            {"n": "Fobos", "d": 25, "s": 0.12, "r": 2}, {"n": "Deimos", "d": 35, "s": 0.09, "r": 1}
+        ]},
+        {"nome": "Mercúrio", "temp": "440 K", "cur": "O menor planeta do sistema solar e o mais próximo do Sol.", "planetas": []},
+        {"nome": "Proxima Centauri b", "temp": "234 K", "cur": "O planeta terrestre mais próximo de nós fora do sistema solar.", "planetas": []},
+        {"nome": "TRAPPIST-1e", "temp": "251 K", "cur": "Mundo rochoso na zona habitável de uma anã vermelha ultra-fria.", "planetas": []},
+        {"nome": "Kepler-186f", "temp": "188 K", "cur": "O primeiro planeta do tamanho da Terra em uma zona habitável.", "planetas": []},
+        {"nome": "Gliese 667 Cc", "temp": "300 K", "cur": "Orbita uma estrela em um sistema estelar triplo.", "planetas": []},
+        {"nome": "Teegarden b", "temp": "290 K", "cur": "Um dos planetas mais parecidos com a Terra já encontrados.", "planetas": []},
+        {"nome": "Kepler-442b", "temp": "233 K", "cur": "Considerado mais habitável que a própria Terra em alguns modelos.", "planetas": []}
+    ],
+    "Lua/Satélite": [
+        {"nome": "Ganimedes", "temp": "110 K", "cur": "Maior lua do sistema solar, maior que o planeta Mercúrio.", "planetas": []},
+        {"nome": "Titã", "temp": "94 K", "cur": "Possui atmosfera densa e lagos de metano e etano líquidos.", "planetas": []},
+        {"nome": "Calisto", "temp": "134 K", "cur": "O objeto com mais crateras no sistema solar.", "planetas": []},
+        {"nome": "Io", "temp": "130 K", "cur": "O corpo geologicamente mais ativo, com centenas de vulcões.", "planetas": []},
+        {"nome": "Lua", "temp": "250 K", "cur": "Controla as marés da Terra e estabiliza nossa inclinação axial.", "planetas": []},
+        {"nome": "Europa", "temp": "100 K", "cur": "Possui um oceano global de água sob uma crosta de gelo.", "planetas": []},
+        {"nome": "Tritão", "temp": "38 K", "cur": "Orbita Netuno de trás para frente; possui criovulcões de nitrogênio.", "planetas": []},
+        {"nome": "Encélado", "temp": "75 K", "cur": "Dispara jatos de água no espaço a partir de seu polo sul.", "planetas": []},
+        {"nome": "Titânia", "temp": "60 K", "cur": "A maior lua de Urano, composta por gelo e rocha.", "planetas": []},
+        {"nome": "Fobos", "temp": "233 K", "cur": "Está se aproximando lentamente de Marte e um dia será destruída.", "planetas": []}
+    ],
+    "Asteroide": [
+        {"nome": "Ceres", "temp": "167 K", "cur": "O maior objeto do cinturão de asteroides; classificado como planeta anão.", "planetas": []},
+        {"nome": "Vesta", "temp": "160 K", "cur": "O segundo mais massivo; possui uma montanha duas vezes maior que o Everest.", "planetas": []},
+        {"nome": "Pallas", "temp": "160 K", "cur": "Um dos maiores asteroides, com órbita altamente inclinada.", "planetas": []},
+        {"nome": "Hygiea", "temp": "160 K", "cur": "Quarto maior, pode ser o menor planeta anão do sistema solar.", "planetas": []},
+        {"nome": "Bennu", "temp": "Variável", "cur": "Alvo da missão OSIRIS-REx; asteroide rico em carbono.", "planetas": []},
+        {"nome": "Itokawa", "temp": "Variável", "cur": "Asteroide em forma de amendoim, visitado pela sonda Hayabusa.", "planetas": []},
+        {"nome": "Eros", "temp": "Variável", "cur": "Primeiro asteroide a ser orbitado e pousado por uma sonda humana.", "planetas": []},
+        {"nome": "Apophis", "temp": "Variável", "cur": "Famoso pela aproximação extrema com a Terra prevista para 2029.", "planetas": []},
+        {"nome": "Chariklo", "temp": "160 K", "cur": "Um centauro (asteroide externo) que possui seu próprio sistema de anéis.", "planetas": []},
+        {"nome": "Psyche", "temp": "Variável", "cur": "Acredita-se que seja o núcleo exposto de um protoplaneta de metal.", "planetas": []}
+    ]
+  }
+}

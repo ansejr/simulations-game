@@ -134,47 +134,103 @@ def numero_para_bubbles(valor: int):
 
         return partes
 
-    def anotar_grupo(valor, label):
-        if valor == 0:
-            return []
-        if label == "mil" and valor == 1:
-            return ["mil"]
-        if label == "milhão":
-            if valor == 1:
-                return ["um milhão"]
-            return segmento_ate_999(valor)[:-1] + [segmento_ate_999(valor)[-1] + " milhão" ] if segmento_ate_999(valor) else ["um milhão"]
-        if label == "milhões":
-            if valor == 1:
-                return ["um milhão"]
-            result = segmento_ate_999(valor)
-            if result:
-                result[-1] = result[-1] + " milhões"
-            return result
-        partes = segmento_ate_999(valor)
-        if partes:
-            partes[-1] = partes[-1] + f" {label}"
-        return partes
+    def scale_names(index):
+        known = {
+            1: ("mil", "mil"),
+            2: ("milhão", "milhões"),
+            3: ("bilhão", "bilhões"),
+            4: ("trilhão", "trilhões"),
+            5: ("quadrilhão", "quadrilhões"),
+            6: ("quintilhão", "quintilhões"),
+            7: ("sextilhão", "sextilhões"),
+            8: ("septilhão", "septilhões"),
+            9: ("octilhão", "octilhões"),
+            10: ("decilhão", "decilhões"),
+            11: ("undecilhão", "undecilhões"),
+            12: ("duodecilhão", "duodecilhões"),
+            13: ("tredecilhão", "tredecilhões"),
+            14: ("quattuordecilhão", "quattuordecilhões"),
+            15: ("quindecilhão", "quindecilhões"),
+            16: ("sedecilhão", "sedecilhões"),
+            17: ("septendecilhão", "septendecilhões"),
+            18: ("octodecilhão", "octodecilhões"),
+            19: ("novendecilhão", "novendecilhões"),
+            20: ("vigintilhão", "vigintilhões"),
+            100: ("centilhão", "centilhões"),
+        }
+        if index in known:
+            return known[index]
+
+        tens_names = {
+            20: "vigint",
+            30: "trigint",
+            40: "quadragint",
+            50: "quinquagint",
+            60: "sexagint",
+            70: "septuagint",
+            80: "octogint",
+            90: "nonagint",
+        }
+        ones_names = {
+            1: "un",
+            2: "duo",
+            3: "tre",
+            4: "quattuor",
+            5: "quin",
+            6: "sex",
+            7: "septen",
+            8: "octo",
+            9: "novem",
+        }
+
+        if index < 100:
+            tens = (index // 10) * 10
+            ones = index % 10
+            prefix = tens_names.get(tens, "")
+            if ones:
+                prefix = ones_names.get(ones, "") + prefix
+            return (prefix + "ilhão", prefix + "ilhões")
+
+        return (f"{index}º grupo", f"{index}º grupo")
 
     negativo = valor < 0
     absoluto = abs(valor)
+
+    grupos = []
+    while absoluto > 0:
+        grupos.append(absoluto % 1000)
+        absoluto //= 1000
+
+    if not grupos:
+        grupos = [0]
 
     partes = []
     if negativo:
         partes.append("menos")
 
-    millions = absoluto // 1_000_000
-    milhares = (absoluto // 1000) % 1000
-    resto = absoluto % 1000
+    for index in range(len(grupos) - 1, -1, -1):
+        grupo = grupos[index]
+        if grupo == 0:
+            continue
 
-    if millions > 0:
-        partes += anotar_grupo(millions, "milhões")
-    if milhares > 0:
-        partes += anotar_grupo(milhares, "mil")
-
-    if resto > 0:
-        if milhares > 0 and resto < 100:
-            partes.append("e")
-        partes += segmento_ate_999(resto)
+        if index == 1:
+            if grupo == 1:
+                partes.append("mil")
+            else:
+                partes += segmento_ate_999(grupo)
+                partes.append("mil")
+        elif index >= 2:
+            scale = scale_names(index)
+            if grupo == 1:
+                partes.append("um")
+                partes.append(scale[0])
+            else:
+                partes += segmento_ate_999(grupo)
+                partes.append(scale[1])
+        else:
+            if partes and grupo < 100:
+                partes.append("e")
+            partes += segmento_ate_999(grupo)
 
     if not partes:
         partes = ["zero"]

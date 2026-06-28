@@ -1,0 +1,14 @@
+{
+  "tiles": [
+    {
+      "x": 500,
+      "y": 500,
+      "type": "Start",
+      "orientation": 1,
+      "extra": 0
+    }
+  ],
+  "character": "Cat",
+  "auto_mode": false,
+  "auto_count": 1
+}

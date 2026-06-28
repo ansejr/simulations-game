@@ -344,30 +344,54 @@ class BubbleManager:
         old_bubbles = list(self.bubbles)
         self.current_words = list(words)
 
-        target_area_x = WIDTH // 2
+        max_line_width = WIDTH - 120
         base_y = 480
+        line_spacing = 100
+        item_spacing = 20
+
         widths = [max(60, FONT_BUBBLE.size(word)[0] + 36) for word in words]
-        total_width = sum(widths) + max(0, len(widths) - 1) * 20
-        start_x = target_area_x - total_width // 2
+
+        rows = []
+        current_row = []
+        current_width = 0
+
+        for word, w in zip(words, widths):
+            if current_row and current_width + item_spacing + w > max_line_width:
+                rows.append(current_row)
+                current_row = []
+                current_width = 0
+            current_row.append((word, w))
+            current_width += w if not current_row[:-1] else item_spacing + w
+
+        if current_row:
+            rows.append(current_row)
 
         new_bubbles = []
-        x = start_x
-        for i, (word, w) in enumerate(zip(words, widths)):
-            target_x = x + w // 2
-            if i < len(old_bubbles) and old_bubbles[i].text == word and old_bubbles[i].state != "popping":
-                bubble = old_bubbles[i]
-                bubble.target_x = target_x
-                bubble.target_y = base_y
-                bubble.radius = max(48, FONT_BUBBLE.size(word)[0] // 2 + 24)
-                new_bubbles.append(bubble)
-            else:
-                if i < len(old_bubbles):
-                    old_bubbles[i].pop()
-                bubble = Bubble(word, target_x, base_y)
-                new_bubbles.append(bubble)
-            x += w + 20
+        index = 0
+        for row_idx, row in enumerate(rows):
+            row_y = base_y + row_idx * line_spacing
+            row_width = sum(w for _, w in row) + item_spacing * (len(row) - 1)
+            row_start_x = (WIDTH - row_width) // 2
+            x = row_start_x
 
-        for bubble in old_bubbles[len(words):]:
+            for word, w in row:
+                target_x = x + w // 2
+                target_y = row_y
+                if index < len(old_bubbles) and old_bubbles[index].text == word and old_bubbles[index].state != "popping":
+                    bubble = old_bubbles[index]
+                    bubble.target_x = target_x
+                    bubble.target_y = target_y
+                    bubble.radius = max(48, FONT_BUBBLE.size(word)[0] // 2 + 24)
+                    new_bubbles.append(bubble)
+                else:
+                    if index < len(old_bubbles):
+                        old_bubbles[index].pop()
+                    bubble = Bubble(word, target_x, target_y)
+                    new_bubbles.append(bubble)
+                x += w + item_spacing
+                index += 1
+
+        for bubble in old_bubbles[index:]:
             bubble.pop()
 
         self.bubbles = [bubble for bubble in old_bubbles if bubble.state == "popping" and bubble not in new_bubbles]

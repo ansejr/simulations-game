@@ -110,22 +110,26 @@ main_panel = pygame_gui.elements.UIPanel(relative_rect=pygame.Rect(0, 0, 250, wi
 play_btn = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(10, 10, 100, 30), text="Play", manager=manager, container=main_panel)
 clear_btn = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(120, 10, 100, 30), text="Limpar Rastro", manager=manager, container=main_panel)
 
-pygame_gui.elements.UILabel(relative_rect=pygame.Rect(10, 50, 80, 30), text="Rastro (px):", manager=manager, container=main_panel)
-trail_entry = pygame_gui.elements.UITextEntryLine(relative_rect=pygame.Rect(100, 50, 110, 30), manager=manager, container=main_panel)
+time_slower_btn = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(10, 45, 100, 30), text="<< Tempo /2", manager=manager, container=main_panel)
+time_faster_btn = pygame_gui.elements.UIButton(relative_rect=pygame.Rect(120, 45, 100, 30), text="Tempo x2 >>", manager=manager, container=main_panel)
+time_label = pygame_gui.elements.UILabel(relative_rect=pygame.Rect(10, 80, 210, 30), text="Escala de Tempo: 1.0x", manager=manager, container=main_panel)
+
+pygame_gui.elements.UILabel(relative_rect=pygame.Rect(10, 115, 80, 30), text="Rastro (px):", manager=manager, container=main_panel)
+trail_entry = pygame_gui.elements.UITextEntryLine(relative_rect=pygame.Rect(100, 115, 110, 30), manager=manager, container=main_panel)
 trail_entry.set_text("0")
 
-scroll_container = pygame_gui.elements.UIScrollingContainer(relative_rect=pygame.Rect(10, 90, 230, window_size[1] - 100), manager=manager, container=main_panel)
+scroll_container = pygame_gui.elements.UIScrollingContainer(relative_rect=pygame.Rect(10, 150, 230, window_size[1] - 160), manager=manager, container=main_panel)
 
 class CircleUI:
     def __init__(self, circle, manager, container, y_pos):
         self.circle = circle
         self.label = pygame_gui.elements.UILabel(
-            pygame.Rect(5, y_pos, 70, 30), f"Circ {circle.id}", manager, container=container)
+            relative_rect=pygame.Rect(5, y_pos, 70, 30), text=f"Circ {circle.id}", manager=manager, container=container)
         self.speed_entry = pygame_gui.elements.UITextEntryLine(
-            pygame.Rect(80, y_pos, 60, 30), manager, container=container)
+            relative_rect=pygame.Rect(80, y_pos, 60, 30), manager=manager, container=container)
         self.speed_entry.set_text(str(int(math.degrees(circle.speed))))
         self.delete_btn = pygame_gui.elements.UIButton(
-            pygame.Rect(145, y_pos, 30, 30), "X", manager, container=container)
+            relative_rect=pygame.Rect(145, y_pos, 30, 30), text="X", manager=manager, container=container)
         
     def kill(self):
         self.label.kill()
@@ -138,6 +142,8 @@ trail = Trail()
 next_circle_id = 1
 playing = False
 max_trail_dist = 0.0
+
+time_scale = 1.0
 
 is_creating = False
 new_circle_center = (0,0)
@@ -230,7 +236,7 @@ while is_running:
                 window_size = (w, h)
                 manager.set_window_resolution(window_size)
                 main_panel.set_dimensions((250, window_size[1]))
-                scroll_container.set_dimensions((230, window_size[1] - 100))
+                scroll_container.set_dimensions((230, window_size[1] - 160)) # Ajustado para os novos botões
                 trail.resize(window_size)
                 
         elif event.type == pygame_gui.UI_BUTTON_PRESSED:
@@ -239,6 +245,12 @@ while is_running:
                 play_btn.set_text("Stop" if playing else "Play")
             elif event.ui_element == clear_btn:
                 trail.clear()
+            elif event.ui_element == time_slower_btn:
+                time_scale /= 2.0
+                time_label.set_text(f"Escala de Tempo: {time_scale}x")
+            elif event.ui_element == time_faster_btn:
+                time_scale *= 2.0
+                time_label.set_text(f"Escala de Tempo: {time_scale}x")
             else:
                 for ui in circle_uis:
                     if event.ui_element == ui.delete_btn:
@@ -327,7 +339,11 @@ while is_running:
                     dragging_circle = None
 
     manager.update(dt)
-    update_positions(dt)
+    
+    scaled_dt = dt * time_scale
+    # Atualiza as posições usando o tempo escalado se estiver tocando
+    # ou 0 se estiver apenas redesenhando
+    update_positions(scaled_dt if playing else 0)
 
     # Pegar o último círculo livre para desenhar o rastro
     drawing_pivot = None
@@ -342,9 +358,17 @@ while is_running:
         is_break = False
         if trail.points:
             last_pos = trail.points[-1][:2]
-            # Se deu um pulo grande (mudou de posição manualmente), quebra a linha contínua
-            if math.hypot(pos[0]-last_pos[0], pos[1]-last_pos[1]) > 50:
-                is_break = True
+            
+            # Verifica se o círculo foi movido pelo mouse (pulo repentino que não condiz com a velocidade/raio)
+            # Aumentamos o limite dinamicamente com base na escala de tempo, 
+            # pois velocidades altas em frames distantes geram grandes saltos legítimos.
+            max_expected_jump = 50 + (100 * time_scale) 
+            
+            if math.hypot(pos[0]-last_pos[0], pos[1]-last_pos[1]) > max_expected_jump:
+                # Confirma se o usuário não está arrastando nada antes de considerar quebra manual
+                if dragging_circle is not None:
+                     is_break = True
+                     
         trail.add_point(pos, is_break)
 
     window_surface.fill((30, 30, 35))

@@ -20,7 +20,7 @@ CINZA = (200, 200, 200)
 AMARELO = (255, 255, 0)
 
 # Configurações do jogo
-NUM_PERGUIDORES =2  # Quantidade de círculos perseguidores
+NUM_PERGUIDORES =23  # Quantidade de círculos perseguidores
 
 class Perseguidor:
     def __init__(self, x, y):

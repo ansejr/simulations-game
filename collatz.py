@@ -8,7 +8,7 @@ import time
 
 # Inicialização do Pygame
 pygame.init()
-pygame.mixer.init(frequency=22050, size=-16, channels=2, buffer=512)
+#pygame.mixer.init(frequency=22050, size=-16, channels=2, buffer=512)
 
 # Configurações da tela
 SCREEN_WIDTH = 1280
@@ -75,7 +75,7 @@ class CollatzVisualizer:
         self.simulation_active = True
         
         # Sons
-        self.drop_sound = self.create_drop_sound()
+        #self.drop_sound = self.create_drop_sound()
         
         # Fontes
         self.font = pygame.font.Font(None, 24)
@@ -107,7 +107,7 @@ class CollatzVisualizer:
             return sound
         except Exception as e:
             print(f"Erro ao criar som: {e}")
-            return pygame.mixer.Sound(buffer=bytes(44))
+    #        return pygame.mixer.Sound(buffer=bytes(44))
     
     def setup_ui(self):
         # Caixa de texto para input

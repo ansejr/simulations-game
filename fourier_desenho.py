@@ -50,6 +50,47 @@ def draw_axes(surface, center):
     pygame.draw.line(surface, AXIS_COLOR, (int(center[0]), 0), (int(center[0]), surface.get_height()), 1)
 
 
+def preset_points(name, size):
+    """Cria uma curva de exemplo centrada e com tamanho proporcional ao canvas."""
+    sample_count = 512
+    raw_points = []
+
+    for index in range(sample_count):
+        parameter = 2 * math.pi * index / sample_count
+        if name == "Seno":
+            point = complex(parameter - math.pi, math.sin(2 * parameter))
+        elif name == "Cosseno":
+            point = complex(parameter - math.pi, math.cos(2 * parameter))
+        elif name == "Tangente":
+            tangent_parameter = (index / (sample_count - 1) - 0.5) * 1.45
+            point = complex(tangent_parameter, math.tan(tangent_parameter))
+        elif name == "Lissajous":
+            point = complex(math.sin(3 * parameter), math.sin(4 * parameter + math.pi / 2))
+        elif name == "Flor":
+            radius = 1 + 0.45 * math.sin(5 * parameter)
+            point = radius * cmath.exp(1j * parameter)
+        elif name == "Espiral":
+            radius = 0.15 + 0.85 * index / (sample_count - 1)
+            point = radius * cmath.exp(1j * 4 * parameter)
+        else:
+            point = cmath.exp(1j * parameter)
+        raw_points.append(point)
+
+    if name in ("Seno", "Cosseno"):
+        canvas_width = size[0] - PANEL_WIDTH
+        horizontal_scale = canvas_width / (2 * math.pi)
+        vertical_scale = size[1] * 0.30
+        return [complex(point.real * horizontal_scale, point.imag * vertical_scale) for point in raw_points]
+
+    largest_coordinate = max(
+        max(abs(point.real) for point in raw_points),
+        max(abs(point.imag) for point in raw_points),
+    )
+    target_extent = size[1] * 0.30
+    scale = target_extent / largest_coordinate
+    return [point * scale for point in raw_points]
+
+
 def draw_fourier(surface, coefficients, time, center, trail_points):
     current = 0j
     previous_screen = complex_to_screen(current, center)
@@ -120,12 +161,29 @@ speed_label = pygame_gui.elements.UILabel(
 )
 repeat_checkbox = pygame_gui.elements.UICheckBox(
     relative_rect=pygame.Rect(18, 190, 206, 32),
-    text="Repetir ao finalizar",
+    text="Repetir: desligado",
     manager=manager,
     container=main_panel,
 )
+examples_label = pygame_gui.elements.UILabel(
+    relative_rect=pygame.Rect(18, 278, 206, 28),
+    text="Desenhos prontos",
+    manager=manager,
+    container=main_panel,
+)
+example_buttons = {}
+example_names = ["Seno", "Cosseno", "Tangente", "Lissajous", "Flor", "Espiral"]
+for example_index, example_name in enumerate(example_names):
+    column = example_index % 2
+    row = example_index // 2
+    example_buttons[example_name] = pygame_gui.elements.UIButton(
+        relative_rect=pygame.Rect(18 + column * 108, 310 + row * 38, 98, 32),
+        text=example_name,
+        manager=manager,
+        container=main_panel,
+    )
 status_label = pygame_gui.elements.UILabel(
-    relative_rect=pygame.Rect(18, 236, 206, 70),
+    relative_rect=pygame.Rect(18, 435, 206, 70),
     text="Desenhe no canvas branco.",
     manager=manager,
     container=main_panel,
@@ -169,11 +227,27 @@ while running:
                 play_button.set_text("Play")
                 status_label.set_text("Desenhe no canvas branco.")
             elif event.ui_element == slower_button:
-                speed = max(0.125, speed / 2)
+                speed = max(0.0078125, speed / 2)
                 speed_label.set_text(f"Velocidade: {speed:g}x")
             elif event.ui_element == faster_button:
                 speed = min(16.0, speed * 2)
                 speed_label.set_text(f"Velocidade: {speed:g}x")
+            elif event.ui_element in example_buttons.values():
+                selected_name = next(
+                    name for name, button in example_buttons.items() if button == event.ui_element
+                )
+                input_points = preset_points(selected_name, window_surface.get_size())
+                coefficients = points_to_coefficients(input_points)
+                reconstruction_trail.clear()
+                animation_time = 0.0
+                is_playing = False
+                play_button.set_text("Play")
+                status_label.set_text(f"Função: {selected_name}")
+        elif event.type in (pygame_gui.UI_CHECK_BOX_CHECKED, pygame_gui.UI_CHECK_BOX_UNCHECKED):
+            if event.ui_element == repeat_checkbox:
+                repeat_checkbox.set_text(
+                    "Repetir: ligado" if repeat_checkbox.get_state() else "Repetir: desligado"
+                )
         elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
             if event.pos[0] >= PANEL_WIDTH:
                 is_drawing = True
